@@ -1,16 +1,16 @@
 package wunderground_api
 
 import (
-  "fmt"
+	"fmt"
 )
 
 type Request struct {
-  Features []string
-  Location string
+	Features []string
+	Location string
 }
 
 type Response struct {
-  CurrentConditions *Conditions
+	CurrentConditions *Conditions
 }
 
 // The actual types returned by the API are not very reliable. The parser
@@ -21,26 +21,26 @@ type Response struct {
 // returned - for numeric types, "-1" will be returned and for strings the
 // same value as received from the API will be provided.
 type Conditions struct {
-  TempC float32
-  TempF float32
+	TempC float32
+	TempF float32
 
-  FeelsLikeF float32
-  FeelsLikeC float32
+	FeelsLikeF float32
+	FeelsLikeC float32
 
-  PressureMb float32
-  RelativeHumidity string
+	PressureMb       float32
+	RelativeHumidity string
 
-  VisibilityKm float32
+	VisibilityKm float32
 
-  Weather string
+	Weather string
 
-  Wind string
-  WindKph float32
-  WindGustKph float32
-  WindDegrees float32
-  WindDir string
+	Wind        string
+	WindKph     float32
+	WindGustKph float32
+	WindDegrees float32
+	WindDir     string
 }
 
 func (r Response) String() string {
-  return fmt.Sprintf("{ CurrentConditions: %s }", r.CurrentConditions)
+	return fmt.Sprintf("{ CurrentConditions: %s }", r.CurrentConditions)
 }
