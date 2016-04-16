@@ -5,8 +5,6 @@ import (
   "errors"
   "net/http"
   "fmt"
-  "encoding/json"
-  "io"
 )
 
 const (
@@ -41,27 +39,16 @@ func (c JsonClient) buildRequestUrl(req *Request) string {
 func (c JsonClient) Execute(req *Request) (*Response, error) {
   url := c.buildRequestUrl(req)
 
-  fmt.Println("Request from " + url)
+  // fmt.Println("Request from " + url)
   resp, err := http.Get(url)
-  if (err != nil) {
+  if err != nil {
     return nil, err
   }
 
-  if (resp.StatusCode != 200) {
+  if resp.StatusCode != 200 {
     return nil, errors.New("invalid HTTP status code: " + resp.Status)
   }
 
   defer resp.Body.Close()
   return parseWeatherResponse(resp.Body)
-}
-
-func parseWeatherResponse(body io.ReadCloser) (*Response, error) {
-  decoder := json.NewDecoder(body)
-  var weatherResponse Response
-  err := decoder.Decode(&weatherResponse)
-  if (err != nil) {
-    return nil, err
-  }
-
-  return &weatherResponse, nil
 }

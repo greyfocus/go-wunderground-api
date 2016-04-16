@@ -1,0 +1,94 @@
+
+{
+  "response": {
+  "version":"0.1",
+  "termsofService":"http://www.wunderground.com/weather/api/d/terms.html",
+  "features": {
+  "conditions": 1
+  }
+	}
+  ,	"current_observation": {
+		"image": {
+		"url":"http://icons.wxug.com/graphics/wu2/logo_130x80.png",
+		"title":"Weather Underground",
+		"link":"http://www.wunderground.com"
+		},
+		"display_location": {
+		"full":"Paris, France",
+		"city":"Paris",
+		"state":"",
+		"state_name":"France",
+		"country":"FR",
+		"country_iso3166":"FR",
+		"zip":"00000",
+		"magic":"37",
+		"wmo":"07156",
+		"latitude":"48.86666489",
+		"longitude":"2.33333302",
+		"elevation":"47.00000000"
+		},
+		"observation_location": {
+		"full":"Paris Orly, ",
+		"city":"Paris Orly",
+		"state":"",
+		"country":"FR",
+		"country_iso3166":"FR",
+		"latitude":"48.71694565",
+		"longitude":"2.38444400",
+		"elevation":"289 ft"
+		},
+		"estimated": {
+		},
+		"station_id":"LFPO",
+		"observation_time":"Last Updated on April 16, 8:30 PM CEST",
+		"observation_time_rfc822":"Sat, 16 Apr 2016 20:30:00 +0200",
+		"observation_epoch":"1460831400",
+		"local_time_rfc822":"Sat, 16 Apr 2016 20:40:27 +0200",
+		"local_epoch":"1460832027",
+		"local_tz_short":"CEST",
+		"local_tz_long":"Europe/Paris",
+		"local_tz_offset":"+0200",
+		"weather":"Mostly Cloudy",
+		"temperature_string":"52 F (11 C)",
+		"temp_f":52,
+		"temp_c":11,
+		"relative_humidity":"62%",
+		"wind_string":"From the North at 10 MPH",
+		"wind_dir":"North",
+		"wind_degrees":350,
+		"wind_mph":10,
+		"wind_gust_mph":0,
+		"wind_kph":17,
+		"wind_gust_kph":0,
+		"pressure_mb":"1005",
+		"pressure_in":"29.68",
+		"pressure_trend":"0",
+		"dewpoint_string":"39 F (4 C)",
+		"dewpoint_f":39,
+		"dewpoint_c":4,
+		"heat_index_string":"NA",
+		"heat_index_f":"NA",
+		"heat_index_c":"NA",
+		"windchill_string":"NA",
+		"windchill_f":"NA",
+		"windchill_c":"NA",
+		"feelslike_string":"52 F (11 C)",
+		"feelslike_f":"52",
+		"feelslike_c":"11",
+		"visibility_mi":"6.2",
+		"visibility_km":"10.0",
+		"solarradiation":"--",
+		"UV":"0","precip_1hr_string":"-9999.00 in (-9999.00 mm)",
+		"precip_1hr_in":"-9999.00",
+		"precip_1hr_metric":"--",
+		"precip_today_string":"0.00 in (0.0 mm)",
+		"precip_today_in":"0.00",
+		"precip_today_metric":"0.0",
+		"icon":"mostlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/mostlycloudy.gif",
+		"forecast_url":"http://www.wunderground.com/global/stations/07156.html",
+		"history_url":"http://www.wunderground.com/history/airport/LFPO/2016/4/16/DailyHistory.html",
+		"ob_url":"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=48.71694565,2.38444400",
+		"nowcast":""
+	}
+}
