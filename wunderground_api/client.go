@@ -3,7 +3,6 @@ package wunderground_api
 import (
 	"bytes"
 	"errors"
-	"fmt"
 	"net/http"
 )
 

@@ -4,6 +4,7 @@ import (
 	"os"
 	"path/filepath"
 	"testing"
+	"time"
 )
 
 const TEST_CONDITIONS_PARIS_FILE = "test-conditions-paris.json"
@@ -41,6 +42,14 @@ func TestGeneralParsing(t *testing.T) {
 	assertFloat("invalid windGustKph", conditions.WindGustKph, 0, t)
 	assertFloat("invalid windDegrees", conditions.WindDegrees, 350, t)
 	assertString("invalid windDir", conditions.WindDir, "North", t)
+	assertInt("invalid time", conditions.ObservationTime.Unix(),
+		time.Date(2016, 4, 16, 18, 30, 0, 0, time.FixedZone("UTC", 0)).Unix(), t)
+}
+
+func assertInt(m string, value int64, expected int64, t *testing.T) {
+	if value != expected {
+		t.Errorf("%s - expected: %2d, but was: %2d", m, expected, value)
+	}
 }
 
 func assertFloat(m string, value float32, expected float32, t *testing.T) {

@@ -28,9 +28,11 @@ func main() {
 		return
 	}
 
-	fmt.Printf("       Temperature: %2.1f C (feels like %2.1f C)\n", resp.CurrentConditions.TempC, resp.CurrentConditions.FeelsLikeC)
-	fmt.Printf(" Relative Humidity: %s\n", resp.CurrentConditions.RelativeHumidity)
-	fmt.Printf("              Wind: %2.1f km/h from %2.1f %s\n",
+	fmt.Printf("       Temperature: %6.1f C (feels like %2.1f C)\n", resp.CurrentConditions.TempC, resp.CurrentConditions.FeelsLikeC)
+	fmt.Printf("          Pressure: %6.1f mb\n", resp.CurrentConditions.PressureMb)
+	fmt.Printf(" Relative Humidity: %7s\n", resp.CurrentConditions.RelativeHumidity)
+	fmt.Printf("              Wind: %6.1f km/h from %2.1f %s\n",
 		resp.CurrentConditions.WindKph, resp.CurrentConditions.WindDegrees, resp.CurrentConditions.WindDir)
-	fmt.Printf("          WindGust: %2.1f km/h\n", resp.CurrentConditions.WindGustKph)
+	fmt.Printf("          WindGust: %6.1f km/h\n", resp.CurrentConditions.WindGustKph)
+	fmt.Printf("  Observation Time: %s\n", resp.CurrentConditions.ObservationTime)
 }

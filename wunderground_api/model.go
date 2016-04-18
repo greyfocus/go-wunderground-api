@@ -2,6 +2,7 @@ package wunderground_api
 
 import (
 	"fmt"
+	"time"
 )
 
 type Request struct {
@@ -39,6 +40,8 @@ type Conditions struct {
 	WindGustKph float32
 	WindDegrees float32
 	WindDir     string
+
+	ObservationTime time.Time
 }
 
 func (r Response) String() string {

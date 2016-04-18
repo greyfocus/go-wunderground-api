@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"strconv"
+	"time"
 )
 
 // The Json attribute containing the current conditions
@@ -72,6 +73,7 @@ func parseConditions(m map[string]interface{}) *Conditions {
 	c.WindGustKph = decodeToFloat(conditionsMap["wind_gust_kph"], "wind_gust_kph")
 	c.WindDegrees = decodeToFloat(conditionsMap["wind_degrees"], "wind_degrees")
 	c.WindDir = decodeToString(conditionsMap["wind_dir"], "wind_dir")
+	c.ObservationTime = time.Unix(decodeToInt(conditionsMap["observation_epoch"], "observation_epoch"), 0)
 
 	return c
 }
@@ -109,6 +111,24 @@ func decodeToString(v interface{}, field string) string {
 		return strconv.FormatFloat(vv, 'f', 2, 64)
 	case int:
 		return strconv.Itoa(vv)
+	default:
+		panic(&parseError{field, nil})
+	}
+}
+
+func decodeToInt(v interface{}, field string) int64 {
+	switch vv := v.(type) {
+	case string:
+		t, e := strconv.ParseInt(vv, 10, 32)
+		if e != nil {
+			panic(&parseError{field, e})
+		}
+
+		return int64(t)
+	case int64:
+		return vv
+	case int32:
+		return int64(vv)
 	default:
 		panic(&parseError{field, nil})
 	}
