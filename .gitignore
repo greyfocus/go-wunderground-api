@@ -21,7 +21,7 @@ _testmain.go
 
 API_KEY
 
-go-wunderground-api
+weather-cmd
 
 *.exe
 *.test
