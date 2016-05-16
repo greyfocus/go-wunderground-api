@@ -21,7 +21,7 @@ _testmain.go
 
 API_KEY
 
-weather-cmd
+weather-cmd/weather-cmd
 
 *.exe
 *.test
